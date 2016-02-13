@@ -1,0 +1,35 @@
+<!doctype html>
+<meta charset="utf-8">
+<link href='https://fonts.googleapis.com/css?family=Cutive' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
+<script type=text/javascript src="{{
+  '/static/gen/app.js'|asseturl }}" charset="utf-8"></script>
+<link rel="stylesheet" href="{{
+  '/static/gen/styles.css'|asseturl }}">
+<title>{% block title %}Welcome{% endblock %} — portfolio</title>
+<body class="striped-0">
+  <header>
+    <div class="container">
+      <h1><a href="/">Projects</a></h1>
+    </div>
+  </header>
+  <div class="container page">
+    {% block body %}{% endblock %}
+  </div>
+  <footer>
+    <div class="container">
+      &copy; Copyright 2016 by <a href="https://github.com/fabid/lektor-bootstrap-portfolio">lektor-bootstrap-portfolio</a>.
+    </div>
+  </footer>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', config.GA_ID, 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>

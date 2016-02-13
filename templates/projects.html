@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Selected Projects{% endblock %}
+{% block body %}
+{% for project in this.children %}
+ <div class="{{'row' ~ loop.cycle(' striped-1', ' dotted-1',' striped-2', 'dotted-2') }}">
+    {% set image = project.attachments.images.first() %}
+    <div class="{{'col-md-6 text-center' ~ loop.cycle(' col-md-push-6', '') }}">
+      {% if image %}
+        <img class="project-image" src="{{ image.thumbnail(480)|url }}" alt="">
+      {% endif %}
+    </div>
+    <div class="{{ 'col-md-6' ~ loop.cycle(' col-md-pull-6', '') }}">
+      <h2><a href="{{ project|url }}">{{ project.name }}</a>
+        {% if project.date %}
+        <small>({{ project.date.year }})</small></h2>
+        {% endif %}
+      <p><strong>{{ project.type }}</strong></p>
+      {% if project.website %}
+      <a href="{{ project.website }}">{{ project.website.host }}</a>
+      {% endif %}
+      <div class="description">{{ project.description }}</div>
+    </div>
+  </div>
+  {% endfor %}
+{% endblock %}

@@ -1,0 +1,86 @@
+/*font override*/
+body {
+  font-family: 'Cutive', "Lucida Console", Monaco, monospace;
+}
+
+h1, h2, h3 {
+  font-family: 'Arvo', "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+/*project specific*/
+.project-image {
+  max-width: 100%;
+  margin-top: 21px;
+  margin-bottom: 21px;
+}
+
+
+/*background patterns*/
+
+$pattern-gray: #fbfbfb;
+
+.striped-0 {
+  background: repeating-linear-gradient(
+    60deg,
+    #ffffff,
+    #ffffff 4px,
+    $pattern-gray 4px,
+    $pattern-gray 6px
+  );
+}
+.striped-1 {
+  background: repeating-linear-gradient(
+    45deg,
+    #ffffff,
+    #ffffff 40px,
+    $pattern-gray 40px,
+    $pattern-gray 60px
+  );
+}
+
+.striped-2 {
+  background: repeating-linear-gradient(
+    135deg,
+    #ffffff,
+    #ffffff 40px,
+    $pattern-gray 40px,
+    $pattern-gray 60px
+  );
+}
+
+.dotted-1 {
+    background:
+        -webkit-radial-gradient($pattern-gray 25%, transparent 16%),
+        -webkit-radial-gradient($pattern-gray 25%, transparent 16%),
+        white;
+    background:
+        -moz-radial-gradient($pattern-gray 25%, transparent 16%),
+        -moz-radial-gradient($pattern-gray 25%, transparent 16%),
+        white;
+    background-position: 0 0, 80px 80px;
+    
+    -webkit-background-size:160px 160px;
+    -moz-background-size:160px 160px;
+    background-size:160px 160px;
+}
+
+.dotted-2 {
+    background:
+        -webkit-radial-gradient(white 60%, transparent 16%),
+        -webkit-radial-gradient(white 60%, transparent 16%),
+        $pattern-gray;
+    background:
+        -moz-radial-gradient(white 25%, transparent 16%),
+        -moz-radial-gradient(white 25%, transparent 16%),
+        $pattern-gray;
+    background-position: 0 0, 80px 80px;
+    
+    -webkit-background-size:160px 160px;
+    -moz-background-size:160px 160px;
+    background-size:160px 160px;
+}

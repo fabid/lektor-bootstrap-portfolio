@@ -1,0 +1,5 @@
+[project]
+name = portfolio
+
+[packages]
+lektor-webpack-support = 0.1

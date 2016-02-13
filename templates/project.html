@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}{{ this.name }} {% if this.date %}({{ this.date.year }}){% endif %}{% endblock %}
+{% block body %}
+  <h1>{{ this.name }}</h1>
+  <dl>
+    {% if this.date %}
+    <dt>Date
+    <dd>{{ this.date|dateformat }}
+    {% endif %}
+    {% if this.website %}
+    <dt>Website
+    <dd><a href="{{ this.website }}">{{ this.website.host }}</a>
+    {% endif %}
+    <dt>Project type
+    <dd>{{ this.type }}
+  </dl>
+  <h2>Description</h2>
+  <div class="description">{{ this.description }}</div>
+  {% set images = this.attachments.images.all() %}
+  {% if images %}
+    <h2>Images</h2>
+    {% for image in images %}
+      <div class="image">
+        <img src="{{ image.thumbnail(640)|url }}" alt="" class="project-image">
+        {% if image.exif %}
+        <p class=meta>
+          {{ image.exif.camera }}
+          {% if image.exif.created_at %}
+            ({{ image.exif.created_at|dateformat }})
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}
